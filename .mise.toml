@@ -1,0 +1,6 @@
+[tools]
+go = "latest"
+
+[env]
+OTEL_SERVICE_NAME="bsky"
+OTEL_TRACES_SAMPLER="always_on"
