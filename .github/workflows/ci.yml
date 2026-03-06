@@ -2,14 +2,19 @@ on:
   pull_request:
     branches:
       - main
+
 jobs:
   setup:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
       - name: Setup Go environment
-        uses: actions/setup-go@v6.3.0
+        uses: actions/setup-go@v6
         with:
-          go-version-file: ./go.mod
+          go-version-file: go.mod
+
       - name: Go Test Action
         uses: robherley/go-test-action@v0.7.1
         with:
